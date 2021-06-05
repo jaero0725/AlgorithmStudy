@@ -1,5 +1,6 @@
 package test05;
 
+//쉽다 1분컷
 class sol10 {
     class Job {
         public int salary;
