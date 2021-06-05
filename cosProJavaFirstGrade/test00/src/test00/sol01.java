@@ -62,24 +62,24 @@ class Sol01 {
     }
 
 	// 아래는 테스트케이스 출력을 해보기 위한 main 메소드입니다.
-	public static void main(String[] args) {
-		Sol01 sol = new Sol01();
-
-		ArrayList<Integer> stack1_1 = new ArrayList<Integer>();
-		ArrayList<Integer> stack2_1 = new ArrayList<Integer>();
-		stack1_1.add(1);
-		stack1_1.add(2);
-		stack2_1.add(3);
-		stack2_1.add(4);
-		int ret1 = sol.solution(stack1_1, stack2_1);
-		System.out.println("solution 메소드의 반환 값은 " + ret1 + " 입니다.");
-
-		ArrayList<Integer> stack1_2 = new ArrayList<Integer>();
-		ArrayList<Integer> stack2_2 = new ArrayList<Integer>();
-		stack1_2.add(1);
-		stack1_2.add(2);
-		stack1_2.add(3);
-		int ret2 = sol.solution(stack1_2, stack2_2);
-		System.out.println("solution 메소드의 반환 값은 " + ret2 + " 입니다.");
-	}
+//	public static void main(String[] args) {
+//		Sol01 sol = new Sol01();
+//
+//		ArrayList<Integer> stack1_1 = new ArrayList<Integer>();
+//		ArrayList<Integer> stack2_1 = new ArrayList<Integer>();
+//		stack1_1.add(1);
+//		stack1_1.add(2);
+//		stack2_1.add(3);
+//		stack2_1.add(4);
+//		int ret1 = sol.solution(stack1_1, stack2_1);
+//		System.out.println("solution 메소드의 반환 값은 " + ret1 + " 입니다.");
+//
+//		ArrayList<Integer> stack1_2 = new ArrayList<Integer>();
+//		ArrayList<Integer> stack2_2 = new ArrayList<Integer>();
+//		stack1_2.add(1);
+//		stack1_2.add(2);
+//		stack1_2.add(3);
+//		int ret2 = sol.solution(stack1_2, stack2_2);
+//		System.out.println("solution 메소드의 반환 값은 " + ret2 + " 입니다.");
+//	}
 }
