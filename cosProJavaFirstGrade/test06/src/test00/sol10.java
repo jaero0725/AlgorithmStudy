@@ -24,11 +24,9 @@ class sol10 {
 					str += "_";
 				}
 			}
-
 			if (str.length() % K == 0 || i == words.length)
 				answer++;
 		} while (i < words.length);
-
 		return answer;
 	}
 
