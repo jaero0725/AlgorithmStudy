@@ -4,82 +4,48 @@ public class sol03 {
 
 	public int solution(String[] bishops) {
 		int answer = 0;
-
-		// 위치값 0으로 고정
-		// 0이면, 안전한곳, 1이면 안전하지 않은 곳
-		int arr[][] = new int[8][8];
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr.length; j++) {
-				arr[i][j] = 0;
-				System.out.print(" [" + arr[i][j] + "] " );
+		int[][] arr = new int[8][8];
+		
+		int i = 0;
+		while(i < bishops.length) {
+			String str = bishops[i];
+			String[] temp = str.split("");
+			//x 와 y로 두자.
+			int y = Integer.parseInt(temp[1]) - 1;
+			int x = 0;
+			switch(temp[0]) {
+				case "A" : x = 0; break;
+				case "B" : x = 1; break;
+				case "C" : x = 2; break;
+				case "D" : x = 3; break;
+				case "E" : x = 4; break;
+				case "F" : x = 5; break;
+				case "G" : x = 6; break;
+				case "H" : x = 7; break;
 			}
-			System.out.println();
+			
+			arr[y][x] = 1;
+			int initX = x, initY = y;
+			int dir = 0;
+			while(dir < 4) {
+				x = initX; y = initY;
+				while(dir == 0 && x > 0 && y > 0) arr[--y][--x] = 1;
+				while(dir == 1 && x > 0 && y < 7) arr[++y][--x] = 1;
+				while(dir == 2 && x < 7 && y > 0) arr[--y][++x] = 1;
+				while(dir == 3 && x < 7 && y < 7) arr[++y][++x] = 1;
+				dir++;
+			}
+			
+			i++;
 		}
-
-		for (int i = 0; i < bishops.length; i++) {
-			// 위치값을 받음.
-			// 위치값은 0부터 시작한다.
-			String loc = bishops[i];
-			int cols = loc.charAt(0) - 64 - 1; // 가로
-			int rows = loc.charAt(1) - 48 - 1; // 세로
-			arr[cols][rows] = 2; // 위치값에 넣는다.
-
-			System.out.println(cols + ", " + rows);
-			// 대각선으로 공격
-			// 1) 왼쪽 위로
-			int n = 1;
-			while (true) {
-				System.out.println("왼쪽 위로 공격 " + (cols + n) + ", " + (rows - n));
-				if (cols - n < 0 || rows + n >= 7)
-					break;
-				arr[cols - n][rows + n] = 1; // 1로 변경
-				n++;
-			}
-			// 2) 오른쪽 위로
-			n = 1;
-			while (true) {
-				System.out.println("오른쪽 위로 공격 " + (cols + n) + ", " + (rows + n));
-				if (cols + n >= 7 || rows + n >= 7)
-					break;
-				arr[cols + n][rows + n] = 1; // 1로 변경
-				n++;
-			}
-			// 3) 왼쪽 아래로
-			n = 1;
-			while (true) {
-				System.out.println("왼쪽 아래로 공격 " + (cols - n) + ", " + (rows - n));
-				if (cols - n <= 0 || rows - n <= 0)
-					break;
-				arr[cols - n][rows - n] = 1; // 1로 변경
-				n++;
-			}
-			// 4) 오른쪽 아래로
-			n = 1;
-			while (true) {
-				System.out.println("오른쪽 아래로 공격 " + (cols - n) + ", " + (rows + n));
-				if (cols - n < 0 || rows + n >= 7)
-					break;
-				arr[cols - n][rows + n] = 1; // 1로 변경
-				n++;
+		
+		answer = arr.length * arr[0].length;
+		for (int j = 0; j < arr.length; j++) {
+			for (int k = 0; k < arr.length; k++) {
+				if(arr[j][k] == 1) answer--;
 			}
 		}
-
-		// 다 넣엇으므로, 갯수 파악 하면된다.
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < i; j++) {
-				if (arr[i][j] == 0)
-					answer++;
-			}
-		}
-
-		// 다 넣엇으므로, 갯수 파악 하면된다.
-		System.out.println("----------- 배치표 -------------- ");
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr.length; j++) {
-				System.out.print(" [" + arr[i][j] + "] " );
-			}
-			System.out.println();
-		}
+		
 		return answer;
 	}
 
