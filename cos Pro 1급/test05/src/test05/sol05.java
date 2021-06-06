@@ -4,29 +4,29 @@ import java.util.*;
 
 //여기선 while문을 쓰는게 어울린다. 
 public class sol05 {
-	public int solution2(int[] enemies, int[] armies) {
-		int answer = 0;
-
-		// 최대 몇마리를 이길 수 있나요?
-		// 가장 공결력쌘걸로, 가장 높은 걸 죽이는게 가장 좋은방법
-		Arrays.sort(armies);
-		Arrays.sort(enemies);
-
-		int win = 0;
-		for (int i = 0; i < armies.length; i++) {
-			// 첫번째 몬스터를 누가이길 수 있을까?
-			for (int j = 0; j < enemies.length; j++) {
-				// i번째 캐릭터가 j번쨰의 몬스터를 이길 수 있나요?
-				// 이기는 상황
-				if (armies[i] >= enemies[j]) {
-					answer++;
-					break;
-				}
-			}
-		}
-		answer = win;
-		return answer;
-	}
+//	public int solution2(int[] enemies, int[] armies) {
+//		int answer = 0;
+//
+//		// 최대 몇마리를 이길 수 있나요?
+//		// 가장 공결력쌘걸로, 가장 높은 걸 죽이는게 가장 좋은방법
+//		Arrays.sort(armies);
+//		Arrays.sort(enemies);
+//
+//		int win = 0;
+//		for (int i = 0; i < armies.length; i++) {
+//			// 첫번째 몬스터를 누가이길 수 있을까?
+//			for (int j = 0; j < enemies.length; j++) {
+//				// i번째 캐릭터가 j번쨰의 몬스터를 이길 수 있나요?
+//				// 이기는 상황
+//				if (armies[i] >= enemies[j]) {
+//					answer++;
+//					break;
+//				}
+//			}
+//		}
+//		answer = win;
+//		return answer;
+//	}
 
 	public int solution(int[] enemies, int[] armies) {
 		int answer = 0;

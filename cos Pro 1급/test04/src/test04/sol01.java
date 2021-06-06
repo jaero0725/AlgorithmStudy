@@ -1,5 +1,7 @@
 package test04;
 
+import java.util.ArrayList;
+
 public class sol01 {
 	String[] vowels = { "A", "E", "I", "O", "U" };
 	ArrayList<String> words;

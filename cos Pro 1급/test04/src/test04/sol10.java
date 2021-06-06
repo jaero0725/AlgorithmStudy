@@ -14,12 +14,15 @@ public class sol10 {
 	public int solution(int a, int b) {
 		int answer = 0;
 
+		//둘다 false
 		List<Boolean> list = new ArrayList<Boolean>();
 		list.add(false);
 		list.add(false);
+		
 		for (int i = 2; i <= b; i++)
 			list.add(true);
 
+		//에라토스테네스의 체
 		for (int i = 2; i * i <= b; i++) {
 			if (list.get(i)) {
 				for (int j = i * i; j <= b; j += i) {
