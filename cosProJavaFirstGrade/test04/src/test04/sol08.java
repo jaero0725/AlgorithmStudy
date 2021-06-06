@@ -12,6 +12,8 @@ public class sol08 {
 	    }
 	    return card_count;
 	}
+	
+	//재귀함수로 처리 
 	public void func_b(int level, int max_level, int num, int[] current_count, int[] max_count) {
 	    if (level == max_level) {
 	    	num_list.add(num);
@@ -32,6 +34,7 @@ public class sol08 {
 	    }
 	    return -1;
 	}
+	
 	public int solution(int[] card, int n) {
 	    int[] card_count = func_a(card);
 	    func_b(0, card.length, 0, new int[10], card_count);
