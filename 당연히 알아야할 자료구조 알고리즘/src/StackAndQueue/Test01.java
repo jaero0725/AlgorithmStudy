@@ -1,4 +1,4 @@
-package 스택과큐;
+package StackAndQueue;
 
 import java.util.Stack;
 
@@ -45,6 +45,7 @@ class MyQueue<T>{
 		shiftStacks();
 		return stackOldest.peek();
 	}
+	
 	public T remove() {
 		shiftStacks();
 		return stackOldest.pop();

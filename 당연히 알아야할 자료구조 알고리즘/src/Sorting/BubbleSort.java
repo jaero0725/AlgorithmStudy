@@ -1,4 +1,4 @@
-package 정렬;
+package Sorting;
 /*
  * 
 ( 앞에서 부터 두개씩 바로 옆에 있는 것을 비교한다. 
