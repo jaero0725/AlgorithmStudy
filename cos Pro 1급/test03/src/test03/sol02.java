@@ -45,7 +45,7 @@ class sol02{
 
 	// 아래는 테스트케이스 출력을 해보기 위한 main 메소드입니다.
 	public static void main(String[] args) {
-		sol04 sol = new sol04();
+		sol02 sol = new sol02();
 		String s1 = new String("abcba");
 		int k1 = 4;
 		String ret1 = sol.solution(s1, k1);
