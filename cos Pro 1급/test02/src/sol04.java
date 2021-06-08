@@ -1,19 +1,6 @@
 
 //다음과 같이 import를 사용할 수 있습니다.
 import java.util.*;
-
-/*
- 문자열 자르는 거 숙지
- 
- String s1 = "asdfbvbdf";
-문자열 길이  : s1.length();
-문자열 앞에 한칸 자르기 : String tmp = s1.substring(0,1);
-문자열 앞에 에서 n칸 만큼 자르기 : tmp = s1.substring(0,n);
-
-문자열 뒤에서 한칸 자르기 : tmp = s1.substring(s1.length() - 1, s1.length());
-문자열 디에서 n칸 만큼 자르기 : tmp = s1.substring(s1.length() - n , s1.length());
-  
- */
 class sol04 {
 	public int solution(int[] arr, int K) {
 		int n = arr.length;

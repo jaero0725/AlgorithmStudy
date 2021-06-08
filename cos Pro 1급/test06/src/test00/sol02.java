@@ -1,4 +1,7 @@
 package test00;
+
+import java.util.ArrayList;
+
 /*
  * 
  * 수열 S가 주어질 때, 이 수열의 연속된 부분 수열 중 지그재그 수열 길이의 최댓값을 구하려 합니다.
@@ -13,16 +16,9 @@ class Sol02 {
     final int INC = 0;
     final int DEC = 1;
     int[] func_a(int[] arr) {
-        int length = arr.length;
-        int[] ret = new int[length];
-        ret[0] = 1;
-        for(int i = 1; i < length; i++) {
-            if(arr[i] != arr[i-1])
-                ret[i] = ret[i-1] + 1;
-            else
-                ret[i] = 2;
-        }
-        return ret;
+        int answer = 0;
+    		String a = a;
+    		a.charAt(index)
     }
 
     int[] func_b(int[] arr) {
