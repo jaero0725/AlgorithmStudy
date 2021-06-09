@@ -3,48 +3,38 @@ package test05;
 public class sol06 {
 	public String solution(String s1, String s2, int p, int q) {
 		String answer = "";
-
-		// p진법으로 나타난 s1, s2를 더해서, q진법으로 나타낸다.
-		int arr1[] = { -1, -1, -1, -1, -1, -1, -1, -1, -1 }; // 없는 자리는 -1로 채운다.
-		int arr2[] = { -1, -1, -1, -1, -1, -1, -1, -1, -1 };
-		int sum[] = { -1, -1, -1, -1, -1, -1, -1, -1, -1 };
-
-		// 0의 자리 부터.
-		for (int i = 0; i < s1.length(); i++) {
-			arr1[i] = Integer.parseInt(s1.substring(i, i + 1));
+		//1. 두수를 10진수로 변환후 더한다.
+		//2. 더한값을 q진법으로 변환한다. 
+		int tmp1 = 0;
+		int tmp2 = 0;
+		int asc = 0 ; //승
+		for(int i = s1.length() - 1; i >=0; i--) {
+			tmp1 += Integer.parseInt(s1.substring(i,i+1)) * Math.pow(p, asc);
+			asc++;
 		}
-		for (int i = 0; i < s2.length(); i++) {
-			arr2[i] = Integer.parseInt(s2.substring(i, i + 1));
+		asc = 0;
+		for(int i = s2.length() - 1; i >=0; i--) {
+			tmp2 += Integer.parseInt(s2.substring(i,i+1)) * Math.pow(p, asc);
+			asc++;
 		}
-
-		// 두개 더하기
-		int length = arr1.length > arr2.length ? arr1.length : arr2.length;
-		for (int i = 0; i < length; i++) {
-			for (int j = i; j < length; j++) {
-				// 자릿수 넘어가는 경우
-				if (arr1[j] + arr2[j] > p) {
-					sum[j + 1] += sum[j + 1] + 1;
-				}
-				// 자릿수 안넘어가는경우
-				else if (arr1[j] + arr2[j] < p) {
-					sum[j] = arr1[j] + arr2[j];
-				}
-			}
+		int sum = tmp1 + tmp2; //두개의 합
+		
+		//sum을 q진법으로 변경
+		while(sum > 0) {
+			answer = String.valueOf(sum % q) + answer;
+			sum = sum / q;
 		}
-		for (int i = 0; i < s1.length(); i++) {
-			System.out.print(arr1[i]);
-		}
-		System.out.println();
-		for (int i = 0; i < s2.length(); i++) {
-			System.out.print(arr2[i]);
-		}
-		System.out.println();
-		for (int i = 0; i < length; i++) {
-			System.out.print(sum[i]);
-		}
-		System.out.println();
-		// System.out.println();
 		return answer;
 	}
+	public static void main(String[] args) {
+		sol06 sol = new sol06();
+		String s1 = new String("112001");
+		String s2 = new String("12010");
+		int p = 3;
+		int q = 8;
+		String ret = sol.solution(s1, s2, p, q);
 
+		// [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
+		System.out.println("solution 메소드의 반환 값은 \"" + ret + "\" 입니다.");
+	}
 }

@@ -4,7 +4,10 @@ public class sol09 {
 	public String solution(int hour, int minute) {
 		String answer = "";
 		//시계의 각도 계산 : 30 * 시간 - 5.5 분
-		double angle = (30 * hour) - (5.5*minute);  
+		//시침은 1분당 -> 30 / 60 = 0.5 씩 움직이고, 
+		//분침은 1분당 -> 360 / 60  = 6 씩 움직인다.
+		// 5.5도씩 움직이는 것 .
+		double angle = (30 * hour) - (5.5 * minute);  
 		answer = Double.toString(angle);
 		return answer;
 	}
