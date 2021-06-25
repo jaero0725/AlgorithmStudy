@@ -14,7 +14,6 @@ public class sol10 {
 	public int solution(int a, int b) {
 		// 여기에 코드를 작성해주세요.
 		int answer = 0;
-
 		// 자연수를 제곱한 수는 제곱수, 세 제곱한 수는 세제곱수 ,
 		// 소수의 제곱수, 세제곱수의 갯수
 		// 6 ~ 30

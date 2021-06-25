@@ -18,7 +18,7 @@ class Sol02 {
     int[] func_a(int[] arr) {
         int answer = 0;
     		String a = a;
-    		a.charAt(index)
+    		a.charAt(index);
     }
 
     int[] func_b(int[] arr) {
